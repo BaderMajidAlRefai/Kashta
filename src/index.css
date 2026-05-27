@@ -1,4 +1,24 @@
+@import "tailwindcss";
+
+:root {
+  --background: #081120;
+  --surface: #102038;
+  --surface-light: #1A2E4A;
+
+  --primary: #F4C95D;
+  --primary-light: #FFD166;
+
+  --success: #7FB069;
+  --danger: #D96C4A;
+
+  --text: #F8FAFC;
+  --text-muted: #A8B3C7;
+}
+
+
+
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Geologica", sans-serif;
+  min-height: 100vh;
 }

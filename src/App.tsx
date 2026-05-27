@@ -1,7 +1,9 @@
+import Header from './Components/Header.tsx'
+
 function App() {
   return (
-    <h1>Kashta</h1>
-  )
+    <Header/>
+  );
 }
 
 export default App
