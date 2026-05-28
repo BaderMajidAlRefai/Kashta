@@ -1,4 +1,5 @@
 import hero from './assets/hero.jpg'
+import TripCard from './Components/tripCard'
 
 function Home(){
     return(
@@ -10,12 +11,11 @@ function Home(){
                         <h1 className='text-white text-6xl'>السَّلامُ عَلَيْكُمْ</h1>
                         <h2 className='text-white text-5xl'>Any new Adventures?</h2>
                     </div>
-                    <div className=' flex-1 bg-[#182840]/80 rounded-2xl'>
-                        
+                    <div className=' flex-1 bg-[#182840]/80 rounded-tr-2xl rounded-tl-2xl'>
+                        <TripCard />
                     </div>
                 </div>
             </div>
-            
         </div>
     )
 }
