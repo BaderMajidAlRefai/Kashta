@@ -12,7 +12,16 @@ function Home(){
                         <h2 className='text-white text-5xl'>Any new Adventures?</h2>
                     </div>
                     <div className=' flex-1 bg-[#182840]/80 rounded-tr-2xl rounded-tl-2xl'>
-                        <TripCard />
+                        <div className='p-10 grid grid-cols-4 gap-3'>
+                            <TripCard />
+                            <TripCard />
+                            <TripCard />
+                            <TripCard />
+                            <TripCard />
+                            <TripCard />
+                            <TripCard />
+                            <TripCard />
+                        </div>
                     </div>
                 </div>
             </div>

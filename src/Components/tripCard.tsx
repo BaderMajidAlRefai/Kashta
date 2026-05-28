@@ -6,7 +6,7 @@ import timePng from '../assets/time.png'
 
 function TripCard(){
     return(
-        <div className="bg-[#111C2D] border border-white  rounded-2xl w-75 h-65">
+        <div className="bg-[#111C2D] border-2 border-white/70  rounded-2xl w-75 h-65">
             <div className="m-3 flex flex-col gap-3">
                 <div className="mb-1">
                     <h1 className="text-white text-2xl">Boys Trip</h1>
