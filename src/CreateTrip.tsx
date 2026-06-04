@@ -1,11 +1,9 @@
-import Hero from './Components/hero'
 import date from './assets/time.png'
 import location from './assets/location.png'
 
 function CreateTrip(){
     return(
         <>
-        <Hero>
             <div className='flex items-center'>
                 <div className='bg-[#182840]/70 backdrop-blur-xl w-160 rounded-2xl'>
                     <form className='p-15 flex flex-col gap-4'>
@@ -35,7 +33,6 @@ function CreateTrip(){
                     </form>
                 </div>
             </div>
-        </Hero>
         </>
     )}
 export default CreateTrip
