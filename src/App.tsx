@@ -1,8 +1,6 @@
 import Header from './Components/Header.tsx'
 import Hero from './Components/hero.tsx'
-// import CreateTrip from './CreateTrip.tsx'
 import TripManage from './tripmanage.tsx'
-// import Home from './Home.tsx'
 
 function App() {
   return (
