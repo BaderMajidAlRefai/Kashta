@@ -1,9 +1,13 @@
 import Return from './assets/return.png'
 import { useState } from 'react'
 import TripManageBox from './tripmanagebox'
+import type { Trip } from './types'
 
+type TripManageProps = {
+    trip: Trip
+}
 
-function TripManage(){
+function TripManage({trip}: TripManageProps){
 
     const [page, setPage] = useState(1)
 
@@ -15,8 +19,8 @@ function TripManage(){
                 </div>
                 <div className='p-5 flex flex-col gap-5'>
                     <div className='flex flex-col gap-5'>
-                        <h1 className="text-white text-5xl">Location of the trip</h1>
-                        <h2 className="text-white text-3xl">Date of the trip</h2>
+                        <h1 className="text-white text-5xl">{trip.location.name ?? "No Location"}</h1>
+                        <h2 className="text-white text-3xl">{trip.date ?? "No date"}</h2>
                     </div>
                     <div className="flex justify-center gap-20 h-15">
                        <a onClick={() => setPage(1)}><ul className="text-white text-3xl cursor-pointer hover:text-gray-300">People</ul></a>

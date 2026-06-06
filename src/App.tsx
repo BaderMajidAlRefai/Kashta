@@ -1,9 +1,9 @@
 import Header from './Components/Header.tsx'
 import Hero from './Components/hero.tsx'
 import TripManage from './tripmanage.tsx'
-import TripManageBox from './tripmanagebox.tsx'
 import { useState, useEffect } from 'react'
 import type { Trip } from './types'
+import {dummyTrip} from './dummytrip.ts'
 
 function App() {
   const [trips, setTrips] = useState<Trip[]>([])
@@ -24,7 +24,7 @@ function App() {
       <div className='min-h-screen flex flex-col'>      
         <Header/>
           <Hero>
-            <TripManage/>
+            <TripManage trip = {dummyTrip}/>
           </Hero>
       </div>
 
