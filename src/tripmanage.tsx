@@ -1,6 +1,12 @@
 import Return from './assets/return.png'
+import { useState } from 'react'
+import TripManageBox from './tripmanagebox'
+
 
 function TripManage(){
+
+    const [page, setPage] = useState(1)
+
     return(
         <div className="flex flex-1 items-center justify-center">
             <div className="bg-[#182840]/90 blur-x w-3/4 h-3/4 rounded-2xl flex flex-col p-5 gap-4">
@@ -13,16 +19,12 @@ function TripManage(){
                         <h2 className="text-white text-3xl">Date of the trip</h2>
                     </div>
                     <div className="flex justify-center gap-20 h-15">
-                        <ul className="text-white text-3xl">People</ul>
-                        <ul className="text-white text-3xl">Cars</ul>
-                        <ul className="text-white text-3xl">Inventory</ul>
+                       <a onClick={() => setPage(1)}><ul className="text-white text-3xl cursor-pointer hover:text-gray-300">People</ul></a>
+                       <a onClick={() => setPage(2)}><ul className="text-white text-3xl cursor-pointer hover:text-gray-300">Cars</ul></a>
+                       <a onClick={() => setPage(3)}><ul className="text-white text-3xl cursor-pointer hover:text-gray-300">Inventory</ul></a>
                     </div>
                     <div className="flex flex-1">
-                        <table>
-                            <tr>
-                                <th></th>
-                            </tr>
-                        </table>
+                        <TripManageBox pageSelect = {page}/>
                     </div>
                 </div>
             </div>
