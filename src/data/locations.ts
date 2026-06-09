@@ -13,14 +13,14 @@
 
 import type { Location } from "../types";
 
-const Mutla: Location = {
+export const Mutla: Location = {
     name: "Mutla",
     remoteness: 2,
     sinkRisk: 3,
     weather: 3,
 }
 
-const Subiya: Location = {
+export const Subiya: Location = {
     name: "Subiya",
     remoteness: 3,
     sinkRisk: 3, 
@@ -28,32 +28,32 @@ const Subiya: Location = {
 }
 
 // I've never been here before so I'm just going off what I've heard.
-const Salmi: Location = {
+export const Salmi: Location = {
     name: "Salmi",
     remoteness: 5,
     sinkRisk: 5,
     weather: 5
 }
 
-const Nuwaiseeb: Location = {
+export const Nuwaiseeb: Location = {
     name: "Nuwaiseeb",
     remoteness: 3,
     sinkRisk: 2, 
     weather: 3
 }
 
-const Abdally: Location = {
+export const Abdally: Location = {
     name: "Abdally",
     remoteness: 5,
     sinkRisk: 2, 
     weather: 4
 }
 
-const Wafra: Location = {
+export const Wafra: Location = {
     name: "Wafra",
     remoteness: 5, 
     sinkRisk: 3, 
     weather: 3
 }
 
-const Locations = [Mutla, Subiya, Salmi, Nuwaiseeb, Abdally, Wafra]
+export const locations = [Mutla, Subiya, Salmi, Nuwaiseeb, Abdally, Wafra]

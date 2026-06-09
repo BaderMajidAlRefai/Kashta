@@ -1,9 +1,10 @@
 import Header from './Components/Header.tsx'
 import Hero from './Components/hero.tsx'
-import TripManage from './tripmanage.tsx'
 import { useState, useEffect } from 'react'
 import type { Trip } from './types'
-import {dummyTrip} from './dummytrip.ts'
+import { Route, Routes } from 'react-router-dom'
+import Home from './Home.tsx'
+import CreateTrip from './CreateTrip.tsx'
 
 function App() {
   const [trips, setTrips] = useState<Trip[]>([])
@@ -24,10 +25,12 @@ function App() {
       <div className='min-h-screen flex flex-col'>      
         <Header/>
           <Hero>
-            <TripManage trip = {dummyTrip}/>
+            <Routes>
+              <Route path='/' element={<Home trips={trips}/>}/>
+              <Route path='/newtrip' element={<CreateTrip setTrips={setTrips} trips={trips}/>}/>
+            </Routes>
           </Hero>
       </div>
-
     </>
   );
 }

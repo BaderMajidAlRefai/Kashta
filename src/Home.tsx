@@ -1,7 +1,12 @@
 import TripCard from './Components/tripCard'
 import NewCard from './Components/newCard'
+import type { Trip } from './types.ts'
 
-function Home(){
+type HomeData = {
+    trips: Trip[]
+}
+
+function Home({trips}: HomeData){
     return(
         <div className='w-[80%] flex flex-col mt-80 gap-10'>
             <div>
@@ -11,7 +16,9 @@ function Home(){
             <div className=' flex-1 bg-[#182840]/80 rounded-tr-2xl rounded-tl-2xl'>
                 <div className='p-10 grid grid-cols-4 gap-3'>
                     <NewCard />
-                    <TripCard />
+                    {trips.map((trip) => {
+                        return <TripCard trip = {trip}/>
+                    })}
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 import Return from './assets/return.png'
 import { useState } from 'react'
-import TripManageBox from './tripmanagebox'
+import TripManageBox from './Components/tripmanagebox.tsx'
 import type { Trip } from './types'
 
 type TripManageProps = {
@@ -28,7 +28,7 @@ function TripManage({trip}: TripManageProps){
                        <a onClick={() => setPage(3)}><ul className="text-white text-3xl cursor-pointer hover:text-gray-300">Inventory</ul></a>
                     </div>
                     <div className="flex flex-1">
-                        <TripManageBox pageSelect = {page}/>
+                        <TripManageBox pageSelect = {page} trip = {trip}/>
                     </div>
                 </div>
             </div>

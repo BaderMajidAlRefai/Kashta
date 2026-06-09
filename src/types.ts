@@ -22,6 +22,7 @@ export type InventoryItem = {
 }
 
 export type Trip = {
+    name: string;
     location: Location;
     date: string;
     participants: Person[]
