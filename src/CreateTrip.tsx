@@ -24,9 +24,11 @@ function CreateTrip({setTrips, trips}: NewCardProps){
         let trip = {... tripTemplate}
         const formData = new FormData(event.currentTarget)
         const tripDate = formData.get("date") as string
+        const tripName = formData.get('name') as string
         let tripLocation = formData.get("location") as string
         trip.id = String(trips.length + 1)
         trip.date = tripDate;
+        trip.name = tripName
         const locationObject = findLocation(tripLocation);
         if(!locationObject){return alert("Something went wrong.")}
         trip.location = locationObject
@@ -39,6 +41,9 @@ function CreateTrip({setTrips, trips}: NewCardProps){
             <div className='flex items-center'>
                 <div className='bg-[#182840]/70 backdrop-blur-xl w-160 rounded-2xl'>
                     <form onSubmit={form} className='p-15 flex flex-col gap-4'>
+                        <div className='flex flex-1'>
+                            <input type="text" name='name' placeholder="Name your trip!" className="outline-none bg-white rounded-2xl p-3 h-15 flex flex-1 text-2xl"/>
+                        </div>
                         <div className='flex gap-8 items-center'>
                             <img src={location} className='w-25'/>
                             <select name='location' className='h-10 flex-1 bg-white/80 rounded-xl text-center cursor-pointer hover:bg-white/60'> 
