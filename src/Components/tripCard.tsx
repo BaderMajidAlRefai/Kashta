@@ -33,7 +33,7 @@ function TripCard({trip}: tripCardProps){
                     <img src={carPng} className='w-7'></img>
                     <h2 className="text-white">{trip.cars.length} cars</h2>
                 </div>
-                <Link to={`/trip/${trip.id}`}><button className="text-black text-center bg-[#F4C95D] rounded-2xl text-xl">Continue Planning!</button></Link>
+                <Link to={`/trip/${trip.id}`} className='flex flex-1'><button className="text-black text-center bg-[#F4C95D] cursor-pointer flex flex-1 justify-center rounded-2xl text-xl hover:bg-[#d4ac49]">Continue Planning!</button></Link>
             </div>
         </div>
     )
