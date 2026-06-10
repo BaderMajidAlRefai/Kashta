@@ -22,6 +22,7 @@ export type InventoryItem = {
 }
 
 export type Trip = {
+    id: string;
     name: string;
     location: Location;
     date: string;

@@ -2,15 +2,23 @@ import Return from './assets/return.png'
 import { useState } from 'react'
 import TripManageBox from './Components/tripmanagebox.tsx'
 import type { Trip } from './types'
+import { useParams } from 'react-router-dom'
+
 
 type TripManageProps = {
-    trip: Trip
-}
+    trips: Trip[],
+    setTrips: React.Dispatch<React.SetStateAction<Trip[]>>
+    }
 
-function TripManage({trip}: TripManageProps){
+function TripManage({trips, setTrips}: TripManageProps){
 
     const [page, setPage] = useState(1)
-
+    const {id} = useParams<{id: string}>()
+    const trip = trips.find(trip => trip.id === id)
+    if (!trip){
+        alert("Trip not found")
+        return null
+    }
     return(
         <div className="flex flex-1 items-center justify-center">
             <div className="bg-[#182840]/90 blur-x w-3/4 h-3/4 rounded-2xl flex flex-col p-5 gap-4">

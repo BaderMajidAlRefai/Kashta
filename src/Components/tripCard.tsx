@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom'
 import carPng from '../assets/car.png'
 import locationPng from '../assets/location.png'
 import personPng from '../assets/person.png'
 import timePng from '../assets/time.png'
 import type { Trip } from '../types'
+
 
 type tripCardProps = {
     trip: Trip
@@ -31,7 +33,7 @@ function TripCard({trip}: tripCardProps){
                     <img src={carPng} className='w-7'></img>
                     <h2 className="text-white">{trip.cars.length} cars</h2>
                 </div>
-                <button className="text-black text-center bg-[#F4C95D] rounded-2xl text-xl">Continue Planning!</button>
+                <Link to={`/trip/${trip.id}`}><button className="text-black text-center bg-[#F4C95D] rounded-2xl text-xl">Continue Planning!</button></Link>
             </div>
         </div>
     )

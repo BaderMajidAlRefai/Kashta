@@ -3,7 +3,7 @@ import location from './assets/location.png'
 import type { Trip } from "./types"
 import { tripTemplate } from './data/trip_template'
 import { locations } from './data/locations'
-
+import { useNavigate } from 'react-router-dom'
 type NewCardProps = {
     trips: Trip[],
     setTrips: React.Dispatch<React.SetStateAction<Trip[]>>
@@ -17,19 +17,21 @@ function findLocation(form_location:string){
     }
 }
 
-function CreateTrip({setTrips}: NewCardProps){
+function CreateTrip({setTrips, trips}: NewCardProps){
+    const navigate = useNavigate()
     function form(event: React.SubmitEvent<HTMLFormElement>){
         event.preventDefault()
-        let trip = tripTemplate
+        let trip = {... tripTemplate}
         const formData = new FormData(event.currentTarget)
         const tripDate = formData.get("date") as string
         let tripLocation = formData.get("location") as string
+        trip.id = String(trips.length + 1)
         trip.date = tripDate;
         const locationObject = findLocation(tripLocation);
         if(!locationObject){return alert("Something went wrong.")}
         trip.location = locationObject
         setTrips(prevTrips => [...prevTrips, trip])
-        
+        navigate(`/trip/${trip.id}`)        
     }
 
     return(
