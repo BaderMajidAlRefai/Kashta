@@ -1,7 +1,7 @@
 import type { Trip } from "../types"
 
 export const tripTemplate: Trip = {
-    id: 0,
+    id: "",
 
     name: "",
 
